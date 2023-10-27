@@ -66,6 +66,54 @@
 
 <script>
 // WRITE YOUR CODE HERE!
+document.querySelector("#btn-problem1").addEventListener("click", function() {
+    document.querySelector("#par-problem1").style.backgroundColor = "blue";
+});
+
+document.querySelector("#btn-problem2").addEventListener("click", function() {
+    window.location.reload();
+});
+
+document.querySelector("#input-problem3").addEventListener("keyup", function() {
+    const newColor = document.querySelector("#input-problem3").value;
+    document.querySelector("#par-problem3").style.backgroundColor = newColor;
+});
+
+const lis = document.querySelectorAll(".li-problem4");
+for (let i = 0; i < lis.length; i++) {
+    lis[i].addEventListener("mouseover", function() {
+        this.classList.toggle("my-font-bold");
+    });
+    lis[i].addEventListener("mouseleave", function() {
+        this.classList.toggle("my-font-bold");
+    });
+}
+
+document.querySelector("#pbjt-problem5").addEventListener("mouseover", function() {
+    this.setAttribute("src", "images/pbjt_2.gif");
+})
+document.querySelector("#pbjt-problem5").addEventListener("mouseleave", function() {
+    this.setAttribute("src", "images/pbjt_1.png");
+})
+
+let intervalId = false;
+document.querySelector("#btn-problem6").addEventListener("click", function() {
+    if(!intervalId) {
+        intervalId = window.setInterval(function() {
+            document.querySelector("#par-problem6").classList.toggle("my-blue");
+        }, 1000);
+    } else {
+        window.clearInterval(intervalId);
+        intervalId = false;
+    }
+});
+
+document.querySelector("#btn-problem7").addEventListener("click", function() {
+    const h4s = document.querySelectorAll("h4");
+    for (let i = 0; i < h4s.length; i++) {
+        h4s[i].classList.toggle("my-green");
+    }
+});
 
 </script>
 </body>
